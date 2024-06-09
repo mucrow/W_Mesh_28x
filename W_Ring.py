@@ -206,8 +206,9 @@ class Make_WRing(bpy.types.Operator):
         
         object_utils.object_data_add(context, mesh, operator=None)
 
-        bpy.ops.object.shade_smooth()
-        context.object.data.use_auto_smooth = True
+        if self.smoothed:
+            bpy.ops.object.shade_smooth()
+
         return {'FINISHED'}
 
 # create UI panel
