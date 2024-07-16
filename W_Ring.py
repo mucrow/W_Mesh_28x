@@ -203,11 +203,8 @@ class Make_WRing(bpy.types.Operator):
 
         mesh.from_pydata(*update_WRing(wD))
         mesh.update()
-        
-        object_utils.object_data_add(context, mesh, operator=None)
 
-        if self.smoothed:
-            bpy.ops.object.shade_smooth()
+        object_utils.object_data_add(context, mesh, operator=None)
 
         return {'FINISHED'}
 

@@ -218,11 +218,8 @@ class Make_WCone(bpy.types.Operator):
 
         mesh.from_pydata(*update_WCone(wD))
         mesh.update()
-        
-        object_utils.object_data_add(context, mesh, operator=None)
 
-        if self.smoothed:
-            bpy.ops.object.shade_smooth()
+        object_utils.object_data_add(context, mesh, operator=None)
 
         return {'FINISHED'}
 
